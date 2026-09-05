@@ -45,11 +45,11 @@ export default function Nav() {
           <div className="flex items-center gap-4">
             <span className="hidden md:flex items-center gap-2 font-mono2 text-[10px] tracking-[0.2em] text-mute border-2 border-panel2 px-2.5 py-1.5">
               <span className="dot-live w-2 h-2 rounded-full bg-live inline-block" />
-              OPEN&nbsp;FOR&nbsp;Q3
+              OPEN&nbsp;FOR&nbsp;COLLABS
             </span>
             <Magnetic strength={0.35} className="hidden sm:inline-block">
               <a href="#signal" data-hover className="btn-comic bg-punch text-paper text-lg px-4 py-1.5">
-                HIRE ME
+                SAY HI
               </a>
             </Magnetic>
             <button

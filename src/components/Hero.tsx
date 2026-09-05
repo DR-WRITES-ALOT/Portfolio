@@ -222,18 +222,56 @@ export default function Hero() {
                 </span>
               </div>
 
-              <div className="relative halftone bg-panel2 border-b-[3px] border-ink overflow-hidden">
-                <img
-                  src="images/avatar.png"
-                  alt="Portrait of Sreejith S H"
-                  className="w-full h-72 md:h-80 object-cover object-top"
-                />
+              <div className="relative bg-[#efe4c9] border-b-[3px] border-ink overflow-hidden">
+                {/* paper texture */}
+                <div className="absolute inset-0 halftone-ink opacity-[0.07] pointer-events-none" aria-hidden="true" />
+
+                {/* wanted poster */}
+                <div className="relative h-72 md:h-80 w-full flex flex-col items-center justify-center gap-1.5 px-4 py-3 text-ink">
+                  <span className="font-display text-3xl md:text-4xl tracking-wide bg-punch text-paper border-[3px] border-ink px-4 py-0.5 -rotate-2 shadow-[4px_4px_0_#05030a]">
+                    WANTED
+                  </span>
+
+                  {/* mugshot frame */}
+                  <div className="relative mt-1.5 flex items-center justify-center border-[3px] border-ink bg-void w-[4.7rem] h-[4.7rem] md:w-20 md:h-20 rotate-2 shadow-[4px_4px_0_#05030a] overflow-hidden">
+                    <svg viewBox="0 0 80 80" className="w-full h-full" aria-hidden="true">
+                      <g fill="#f4ecdd">
+                        <circle cx="40" cy="30" r="17" />
+                        <path d="M12 80 C12 60 26 54 40 54 C54 54 68 60 68 80 Z" />
+                      </g>
+                      <text
+                        x="40"
+                        y="56"
+                        textAnchor="middle"
+                        fontFamily="Bangers, 'Arial Black', sans-serif"
+                        fontSize="40"
+                        fill="#ffe600"
+                      >
+                        ?
+                      </text>
+                    </svg>
+                    <span className="absolute inset-0 border-2 border-dashed border-punch/70 m-1.5 pointer-events-none" aria-hidden="true" />
+                  </div>
+
+                  <p className="font-display text-2xl md:text-[27px] leading-none tracking-wide text-center -rotate-1 mt-0.5">
+                    SREEJITH S H
+                  </p>
+                  <p className="font-mono2 text-[9px] font-bold tracking-[0.3em] text-ink/70">
+                    AKA DR-WRITES-ALOT
+                  </p>
+                  <p className="font-mono2 text-[8px] tracking-[0.18em] text-ink/75 text-center leading-relaxed max-w-[235px]">
+                    FOR: SHIPPING SIDE PROJECTS AT 3AM
+                    <br />
+                    LAST SEEN: VIT CHENNAI · REWARD: ∞ COLLABS
+                  </p>
+                </div>
+
                 <div className="scan-band" aria-hidden="true" />
                 <span className="absolute top-3 left-3 font-mono2 text-[9px] font-bold tracking-[0.2em] text-ink bg-acid border-2 border-ink px-1.5 py-0.5">
-                  SCAN 100%
+                  POSTER #001
                 </span>
                 <span className="absolute bottom-3 right-3 font-mono2 text-[9px] font-bold tracking-[0.2em] text-acid blink">
-                  ● REC
+                  ● LIVE
                 </span>
               </div>
 

@@ -16,7 +16,7 @@ const PANELS = [
   {
     caption: "CHAPTER 02 — 2025",
     title: "THE DEEP DIVE",
-    text: "Starts developing for real and joins GitHub as DR-WRITES-ALOT. First public repos go live — SnapHarbor and FLOW stop being ideas and start being code.",
+    text: "Starts developing for real and joins GitHub as DR-WRITES-ALOT. SnapHarbor stops being an idea and slowly becomes a shipped v1.0 desktop release.",
     sfx: "COMMIT!",
     bg: "bg-punch",
     titleColor: "text-paper",

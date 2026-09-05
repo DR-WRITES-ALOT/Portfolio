@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import PaperComic, { PaperKey } from "./ProjectLogo";
 
 const GITHUB = "https://github.com/DR-WRITES-ALOT";
 const EMAIL = "sreejithsh09@gmail.com";
@@ -9,8 +10,7 @@ type Mission = {
   year: string;
   title: string;
   role: string;
-  img: string;
-  alt: string;
+  logo: PaperKey;
   desc: string;
   tags: string[];
   stats: { value: string; label: string }[];
@@ -25,8 +25,7 @@ const MISSIONS: Mission[] = [
     year: "2026",
     title: "SNAPHARBOR",
     role: "DESKTOP — TAURI + RUST",
-    img: "images/proj-arcade.jpg",
-    alt: "Comic-style cover art for SnapHarbor, a desktop media vault",
+    logo: "snap",
     desc: "A local-first photo & video media vault for Windows. SHA-256 dedupe so nothing copies twice, one-click sync the moment a phone or SD card plugs in, a timeline gallery, automation rules and a system tray that keeps transfers alive. Released as v1.0.0.",
     tags: ["TAURI", "RUST", "REACT", "TYPESCRIPT", "SQLITE"],
     stats: [
@@ -41,28 +40,26 @@ const MISSIONS: Mission[] = [
   {
     id: "CASE-02",
     year: "2026",
-    title: "FLOW — NEVER LATE",
-    role: "TRANSIT SIM — WEB APP",
-    img: "images/proj-synth.jpg",
-    alt: "Comic-style cover art for FLOW, a transit simulation app",
-    desc: "A deterministic transit simulation that demonstrates proactive journey recovery. FLOW watches your connections, calculates connection confidence in real time, and when a disruption hits, it secures an alternative route before you're stuck.",
-    tags: ["TYPESCRIPT", "PRISMA", "NODE", "SIM"],
+    title: "RAPID RESPONSE DRONE MAPPER",
+    role: "AI DISASTER RESPONSE — HACKATHON",
+    logo: "drone",
+    desc: "Built with a team for the Build with Gemma Hackathon (GDG). Upload a ZIP of drone images and AI (Google Gemma 4) assesses each one — severity scored 1–10, hazard summaries auto-written, and GPS-tagged results plotted on an interactive map for emergency teams.",
+    tags: ["PYTHON", "STREAMLIT", "GEMMA 4", "GPS", "AI"],
     stats: [
-      { value: "REAL-TIME", label: "CONFIDENCE" },
-      { value: "AUTO", label: "ROUTE RECOVERY" },
-      { value: "SAVED", label: "TIME VS BASELINE" },
+      { value: "1–10", label: "SEVERITY SCORE" },
+      { value: "AI", label: "GEMMA 4 VISION" },
+      { value: "MAP", label: "GPS-LOCATED" },
     ],
     shadow: "shadow-[10px_10px_0_#ff2e7e]",
     accent: "#ff2e7e",
-    href: `${GITHUB}/FLOW`,
+    href: `${GITHUB}/rapid-response-dronemapper`,
   },
   {
     id: "CASE-03",
     year: "2026",
     title: "CAPTURE THE ORANGE MAN",
     role: "UNITY — PRIVATE REPO",
-    img: "images/proj-kaiju.jpg",
-    alt: "Comic-style cover art for Capture the Orange Man, a Unity game",
+    logo: "orange",
     desc: "A 5-minute obstacle course + room escape, built in Unity. Search for the key while running into funny characters along the way, then reach the locked room and take the win. Small game, big personality.",
     tags: ["UNITY", "C#", "GAME DEV"],
     stats: [
@@ -78,8 +75,7 @@ const MISSIONS: Mission[] = [
     year: "2026",
     title: "THIS PORTFOLIO",
     role: "REACT + VITE + TAILWIND",
-    img: "images/proj-ghost.jpg",
-    alt: "Comic-style cover art for this portfolio site",
+    logo: "code",
     desc: "The page you're reading — a comic-book UI that compiles to one self-contained HTML file, then ships itself. Every commit is built and deployed to GitHub Pages by a GitHub Actions pipeline. Dogfooding is fun.",
     tags: ["REACT", "VITE", "TYPESCRIPT", "TAILWIND", "GH ACTIONS"],
     stats: [
@@ -118,14 +114,15 @@ export default function Projects() {
                   i % 2 === 0 ? "md:-rotate-[0.5deg]" : "md:rotate-[0.5deg]"
                 }`}
               >
-                {/* image */}
+                {/* paper-comic panel */}
                 <div
-                  className={`relative overflow-hidden border-b-[3px] border-ink md:border-b-0 h-64 md:h-auto ${
+                  className={`relative overflow-hidden border-b-[3px] border-ink md:border-b-0 h-64 md:h-auto bg-[#eee1bd] ${
                     i % 2 === 0 ? "md:border-r-[3px]" : "md:order-2 md:border-l-[3px]"
                   }`}
                 >
-                  <img src={m.img} alt={m.alt} className="kenburns w-full h-full object-cover min-h-64" />
-                  <div className="absolute inset-0 halftone-ink opacity-30 pointer-events-none" aria-hidden="true" />
+                  <div className="relative w-full h-full min-h-64">
+                    <PaperComic project={m.logo} />
+                  </div>
                   <span className="absolute top-4 right-4 rotate-12 font-display text-xl md:text-2xl tracking-widest text-punch border-[3px] border-punch bg-void/70 px-2.5 py-0.5">
                     {i === 3 ? "DECLASSIFIED" : "CLASSIFIED"}
                   </span>

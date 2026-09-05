@@ -113,7 +113,7 @@ export default function App() {
               "C#",
               "GIT",
               "SNAPHARBOR",
-              "FLOW",
+              "DRONE MAPPER",
               "BUILD · BREAK · REPEAT",
             ]}
             className="bg-volt text-ink"
