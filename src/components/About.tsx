@@ -27,7 +27,7 @@ const PANELS = [
   {
     caption: "CHAPTER 03 — 2025",
     title: "CAMPUS ARC",
-    text: "Joins VIT Chennai for B.Tech CSE. Core CS in the classroom, side builds at midnight, and a desktop media vault slowly becoming a real release.",
+    text: "Clears school at RSK, Trichy and joins VIT Chennai for B.Tech CSE. Core CS in the classroom, side builds at midnight, and a desktop media vault slowly becoming a real release.",
     sfx: "LEVEL UP!",
     bg: "bg-volt",
     titleColor: "text-ink",
