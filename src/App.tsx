@@ -46,19 +46,19 @@ function BootScreen({ onDone }: { onDone: () => void }) {
     >
       <div className="text-center px-6">
         <p className="intro-line font-mono2 text-[11px] font-bold tracking-[0.35em] text-acid" style={{ animationDelay: "0.05s" }}>
-          KIRA.VOLT OS — v2.7
+          DR.WRITES OS — v1.0
         </p>
         <p
-          className="intro-line font-display text-7xl md:text-9xl text-volt stroke-ink-4 tracking-wide mt-3"
+          className="intro-line font-display text-6xl md:text-8xl text-volt stroke-ink-4 tracking-wide mt-3"
           style={{ animationDelay: "0.2s" }}
         >
-          KIRA VOLT
+          SREEJITH S H
         </p>
         <div className="intro-line mt-7 h-4 w-64 md:w-80 mx-auto border-2 border-ink bg-panel overflow-hidden" style={{ animationDelay: "0.38s" }}>
           <div className="intro-load h-full stripes-anim bg-volt" />
         </div>
         <p className="intro-line font-mono2 text-[10px] tracking-[0.3em] text-mute mt-5" style={{ animationDelay: "0.5s" }}>
-          CALIBRATING NEON <span className="text-live">… OK</span>{" "}
+          LOADING ASSETS <span className="text-live">… OK</span>{" "}
           <span className="text-punch">▮▮▮▮▮</span> READY
         </p>
       </div>
@@ -105,14 +105,16 @@ export default function App() {
         <div className="relative z-10 -rotate-1 scale-[1.02]">
           <Marquee
             items={[
-              "REACT",
-              "WEBGL",
-              "MOTION DESIGN",
-              "DESIGN SYSTEMS",
-              "CREATIVE CODE",
-              "60 FPS OR BUST",
-              "TYPESCRIPT",
-              "THREE.JS",
+              "HTML",
+              "CSS",
+              "JAVASCRIPT",
+              "PYTHON",
+              "UNITY",
+              "C#",
+              "GIT",
+              "SNAPHARBOR",
+              "FLOW",
+              "BUILD · BREAK · REPEAT",
             ]}
             className="bg-volt text-ink"
             speed={30}
@@ -121,12 +123,13 @@ export default function App() {
         <div className="relative z-10 rotate-1 scale-[1.02] -mt-2.5">
           <Marquee
             items={[
-              "HIRE THE PUNCH",
-              "NEO-KYOTO",
-              "OPEN FOR Q3",
-              "COMMIT & DEPLOY",
-              "NO BORING UI",
-              "SPLASH-PAGE ENERGY",
+              "DR-WRITES-ALOT",
+              "VIT CHENNAI",
+              "CSE YEAR 2",
+              "OPEN FOR COLLABS",
+              "OPEN SOURCE",
+              "COMMIT & SHIP",
+              "COFFEE-POWERED",
             ]}
             className="bg-punch text-paper"
             reverse

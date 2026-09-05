@@ -19,10 +19,10 @@ export default function Nav() {
           <Magnetic strength={0.25}>
             <a href="#top" className="flex items-center gap-3 group" data-hover>
               <span className="font-display text-2xl leading-none bg-volt text-ink border-[3px] border-ink px-2.5 py-1 -rotate-3 shadow-[4px_4px_0_#05030a] transition-transform duration-200 group-hover:rotate-3">
-                KV!
+                DR!
               </span>
               <span className="hidden sm:block font-mono2 text-xs tracking-[0.3em] text-paper">
-                KIRA<span className="text-punch">VOLT</span>
+                DR-WRITES<span className="text-punch">-ALOT</span>
               </span>
             </a>
           </Magnetic>
@@ -92,8 +92,8 @@ export default function Nav() {
             </a>
           ))}
           <p className="mt-8 font-mono2 text-xs tracking-[0.25em] text-mute">
-            NEO-KYOTO <span className="text-volt">✦</span> UTC+9{" "}
-            <span className="text-volt">✦</span> ISSUE #27
+            CHENNAI <span className="text-volt">✦</span> UTC+5:30{" "}
+            <span className="text-volt">✦</span> PORTFOLIO v1.0
           </p>
         </div>
       </div>
