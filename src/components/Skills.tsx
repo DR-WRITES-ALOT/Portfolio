@@ -3,30 +3,31 @@ import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { useInView } from "../lib/hooks";
 
+// No fake percentages — each skill shows its real, self-reported stage.
 const BARS = [
-  { label: "REACT / TYPESCRIPT", value: 96, color: "#ffe600" },
-  { label: "CREATIVE CODE — WEBGL / THREE", value: 90, color: "#ff2e7e" },
-  { label: "MOTION — GSAP / RIVE / CSS", value: 94, color: "#2be8ff" },
-  { label: "UI DESIGN — FIGMA / SYSTEMS", value: 88, color: "#ff7a18" },
-  { label: "PERF / A11Y AUDITS", value: 91, color: "#6eff8c" },
-  { label: "NODE / EDGE APIS", value: 82, color: "#ffe600" },
+  { label: "HTML / CSS / JAVASCRIPT", value: "EVERYDAY", color: "#ffe600" },
+  { label: "PYTHON", value: "2023 → NOW", color: "#2be8ff" },
+  { label: "GIT", value: "DAILY DRIVER", color: "#6eff8c" },
+  { label: "C / C++", value: "SEMESTER", color: "#ff7a18" },
+  { label: "JAVA", value: "SEMESTER", color: "#ff2e7e" },
+  { label: "C# · UNITY", value: "IN THE FORGE", color: "#ff2e7e" },
 ];
 
 const GEAR = [
-  "React 19",
-  "TypeScript",
-  "Vite",
-  "Three.js",
-  "GSAP",
-  "Tailwind v4",
-  "Figma",
-  "Blender",
-  "Node",
-  "Bun",
-  "WebGPU*",
-  "Shaders",
-  "Rive",
-  "Framer",
+  "HTML",
+  "CSS",
+  "JAVASCRIPT",
+  "PYTHON",
+  "C",
+  "C++",
+  "JAVA",
+  "C#",
+  "UNITY",
+  "GIT",
+  "REACT*",
+  "TYPESCRIPT*",
+  "TAURI*",
+  "RUST*",
 ];
 
 export default function Skills() {
@@ -54,21 +55,21 @@ export default function Skills() {
                     <span className="font-mono2 text-[11px] font-bold tracking-[0.18em] text-paper">
                       {b.label}
                     </span>
-                    <span className="font-display text-2xl leading-none" style={{ color: b.color }}>
-                      {b.value}%
+                    <span className="font-display text-xl md:text-2xl leading-none" style={{ color: b.color }}>
+                      {b.value}
                     </span>
                   </div>
                   <div className="h-7 border-[3px] border-ink bg-void relative overflow-hidden">
                     <div
                       className="h-full stripes-anim border-r-[3px] border-ink transition-[width] duration-[1200ms] ease-out"
                       style={{
-                        width: inView ? `${b.value}%` : "0%",
+                        width: inView ? "100%" : "0%",
                         background: b.color,
                         transitionDelay: `${i * 110}ms`,
                       }}
                     />
                     <span className="absolute right-2 top-1/2 -translate-y-1/2 font-mono2 text-[9px] font-bold tracking-[0.2em] text-mute">
-                      PWR
+                      LIVE
                     </span>
                   </div>
                 </Reveal>
@@ -96,36 +97,36 @@ export default function Skills() {
                     </Magnetic>
                   ))}
                 </div>
-                <p className="font-mono2 text-[10px] text-mute mt-4">* currently being forged</p>
+                <p className="font-mono2 text-[10px] text-mute mt-4">* powering my real repos on GitHub</p>
               </div>
             </Reveal>
 
             <Reveal delay={220}>
               <div className="bg-void border-[3px] border-ink shadow-[8px_8px_0_#ff2e7e] p-6 font-mono2 text-xs leading-7">
                 <p className="text-mute">
-                  <span className="text-punch">~/kira $</span> cat current_quest.log
+                  <span className="text-punch">~/drw $</span> cat current_quest.log
                 </p>
                 <p className="text-paper">
-                  <span className="text-volt">▸</span> learning: <span className="text-acid">WebGPU compute shaders</span>
+                  <span className="text-volt">▸</span> learning: <span className="text-acid">Unity — C# fundamentals</span>
                 </p>
                 <p className="text-paper">
-                  <span className="text-volt">▸</span> status: <span className="text-punch">OBSESSED</span>
+                  <span className="text-volt">▸</span> status: <span className="text-punch">SEM 3 — B.TECH CSE @ VIT</span>
                 </p>
                 <p className="text-paper">
-                  <span className="text-volt">▸</span> side-quest: comic engine in the browser
+                  <span className="text-volt">▸</span> side-quest: open-source & collab runs
                 </p>
                 <p className="text-mute">
-                  <span className="text-punch">~/kira $</span> <span className="blink text-volt">▌</span>
+                  <span className="text-punch">~/drw $</span> <span className="blink text-volt">▌</span>
                 </p>
                 <div className="mt-4">
                   <div className="flex justify-between text-[10px] tracking-[0.2em] mb-1.5">
-                    <span className="text-paper">XP TO NEXT LEVEL</span>
-                    <span className="text-volt">74%</span>
+                    <span className="text-paper">DEGREE PROGRESS</span>
+                    <span className="text-volt">2/4 YEARS</span>
                   </div>
                   <div className="h-4 border-2 border-ink bg-panel overflow-hidden">
                     <div
                       className="h-full stripes-anim transition-[width] duration-[1400ms] ease-out"
-                      style={{ width: inView ? "74%" : "0%", background: "#ff7a18" }}
+                      style={{ width: inView ? "50%" : "0%", background: "#ff7a18" }}
                     />
                   </div>
                 </div>

@@ -1,6 +1,9 @@
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
+const GITHUB = "https://github.com/DR-WRITES-ALOT";
+const EMAIL = "sreejithsh09@gmail.com";
+
 type Mission = {
   id: string;
   year: string;
@@ -13,76 +16,80 @@ type Mission = {
   stats: { value: string; label: string }[];
   shadow: string;
   accent: string;
+  href?: string;
 };
 
 const MISSIONS: Mission[] = [
   {
     id: "CASE-01",
-    year: "2025",
-    title: "NEON ARCADE",
-    role: "LEAD CREATIVE DEV",
-    img: "/images/proj-arcade.jpg",
-    alt: "Comic illustration of a neon cyberpunk arcade leaderboard dashboard",
-    desc: "A WebGL game hub where the leaderboard is a living city. Real-time rankings rendered as holographic billboards, with a custom particle engine for win-streak celebrations.",
-    tags: ["THREE.JS", "REACT", "WEBSOCKETS", "GLSL"],
+    year: "2026",
+    title: "SNAPHARBOR",
+    role: "DESKTOP — TAURI + RUST",
+    img: "images/proj-arcade.jpg",
+    alt: "Comic-style cover art for SnapHarbor, a desktop media vault",
+    desc: "A local-first photo & video media vault for Windows. SHA-256 dedupe so nothing copies twice, one-click sync the moment a phone or SD card plugs in, a timeline gallery, automation rules and a system tray that keeps transfers alive. Released as v1.0.0.",
+    tags: ["TAURI", "RUST", "REACT", "TYPESCRIPT", "SQLITE"],
     stats: [
-      { value: "+212%", label: "SESSION TIME" },
-      { value: "60FPS", label: "ON MID-TIER MOBILE" },
-      { value: "SOTD", label: "AWWWARDS" },
+      { value: "v1.0.0", label: "RELEASED" },
+      { value: "SHA-256", label: "DEDUPE" },
+      { value: "AUTO", label: "SYNC ON PLUG-IN" },
     ],
     shadow: "shadow-[10px_10px_0_#ffe600]",
     accent: "#ffe600",
+    href: `${GITHUB}/SnapHarbor`,
   },
   {
     id: "CASE-02",
-    year: "2024",
-    title: "SYNTHWAVE.FM",
-    role: "UI ENGINEER",
-    img: "/images/proj-synth.jpg",
-    alt: "Comic illustration of a retro-futuristic music streaming app with cassette and equalizer",
-    desc: "Music streaming for the retro-future: a cassette-deck player, waveform scrubbing drawn on canvas, and queue cards that riffle like a comic panel flip.",
-    tags: ["REACT", "WEB AUDIO", "CANVAS", "PWA"],
+    year: "2026",
+    title: "FLOW — NEVER LATE",
+    role: "TRANSIT SIM — WEB APP",
+    img: "images/proj-synth.jpg",
+    alt: "Comic-style cover art for FLOW, a transit simulation app",
+    desc: "A deterministic transit simulation that demonstrates proactive journey recovery. FLOW watches your connections, calculates connection confidence in real time, and when a disruption hits, it secures an alternative route before you're stuck.",
+    tags: ["TYPESCRIPT", "PRISMA", "NODE", "SIM"],
     stats: [
-      { value: "4.9★", label: "APP STORE" },
-      { value: "38K", label: "DAILY LISTENERS" },
-      { value: "-41%", label: "SKIP RATE" },
+      { value: "REAL-TIME", label: "CONFIDENCE" },
+      { value: "AUTO", label: "ROUTE RECOVERY" },
+      { value: "SAVED", label: "TIME VS BASELINE" },
     ],
     shadow: "shadow-[10px_10px_0_#ff2e7e]",
     accent: "#ff2e7e",
+    href: `${GITHUB}/FLOW`,
   },
   {
     id: "CASE-03",
-    year: "2024",
-    title: "KAIJU DASH",
-    role: "DESIGN + FRONTEND",
-    img: "/images/proj-kaiju.jpg",
-    alt: "Comic illustration of a friendly kaiju delivering a parcel between neon skyscrapers",
-    desc: "Same-day delivery, but the courier is a 40-metre kaiju. Live map tracking with monster-scale animations, and a checkout flow that converts like a finishing move.",
-    tags: ["NEXT.JS", "MAPBOX", "RIVE", "STRIPE"],
+    year: "2026",
+    title: "CAPTURE THE ORANGE MAN",
+    role: "UNITY — PRIVATE REPO",
+    img: "images/proj-kaiju.jpg",
+    alt: "Comic-style cover art for Capture the Orange Man, a Unity game",
+    desc: "A 5-minute obstacle course + room escape, built in Unity. Search for the key while running into funny characters along the way, then reach the locked room and take the win. Small game, big personality.",
+    tags: ["UNITY", "C#", "GAME DEV"],
     stats: [
-      { value: "+64%", label: "CONVERSION" },
-      { value: "1.2s", label: "LCP" },
-      { value: "0", label: "CITIES FLATTENED" },
+      { value: "5 MIN", label: "PLAYTIME" },
+      { value: "1", label: "KEY TO FIND" },
+      { value: "1", label: "LOCKED ROOM" },
     ],
     shadow: "shadow-[10px_10px_0_#ff7a18]",
     accent: "#ff7a18",
   },
   {
     id: "CASE-04",
-    year: "2023",
-    title: "GHOST PROTOCOL",
-    role: "CREATIVE DEV",
-    img: "/images/proj-ghost.jpg",
-    alt: "Comic illustration of a cyberpunk security dashboard with a ghost hologram over a world map",
-    desc: "A SOC dashboard that makes threat-hunting feel like a ghost story. 50k events/min streamed into a canvas heatmap, with an incident timeline that reads like a manga chapter.",
-    tags: ["TYPESCRIPT", "D3", "WEBSOCKETS", "EDGE FN"],
+    year: "2026",
+    title: "THIS PORTFOLIO",
+    role: "REACT + VITE + TAILWIND",
+    img: "images/proj-ghost.jpg",
+    alt: "Comic-style cover art for this portfolio site",
+    desc: "The page you're reading — a comic-book UI that compiles to one self-contained HTML file, then ships itself. Every commit is built and deployed to GitHub Pages by a GitHub Actions pipeline. Dogfooding is fun.",
+    tags: ["REACT", "VITE", "TYPESCRIPT", "TAILWIND", "GH ACTIONS"],
     stats: [
-      { value: "50K/MIN", label: "EVENTS RENDERED" },
-      { value: "-28%", label: "MTTR" },
-      { value: "SOC2", label: "COMPLIANT" },
+      { value: "100%", label: "ONE HTML FILE" },
+      { value: "CI", label: "DEPLOY ON PUSH" },
+      { value: "LIVE", label: "GITHUB PAGES" },
     ],
     shadow: "shadow-[10px_10px_0_#2be8ff]",
     accent: "#2be8ff",
+    href: `${GITHUB}/Portfolio`,
   },
 ];
 
@@ -173,15 +180,27 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-6">
-                    <a
-                      href={`mailto:hello@kiravolt.dev?subject=${encodeURIComponent(
-                        `Open case file: ${m.title}`
-                      )}`}
-                      data-hover
-                      className="btn-comic bg-void text-volt text-lg px-5 py-2"
-                    >
-                      REQUEST FULL CASE ↗
-                    </a>
+                    {m.href ? (
+                      <a
+                        href={m.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        data-hover
+                        className="btn-comic bg-void text-volt text-lg px-5 py-2"
+                      >
+                        VIEW ON GITHUB ↗
+                      </a>
+                    ) : (
+                      <a
+                        href={`mailto:${EMAIL}?subject=${encodeURIComponent(
+                          `Demo access: ${m.title}`
+                        )}`}
+                        data-hover
+                        className="btn-comic bg-void text-volt text-lg px-5 py-2"
+                      >
+                        ASK FOR THE DEMO ↗
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>
@@ -191,7 +210,11 @@ export default function Projects() {
 
         <Reveal delay={100}>
           <p className="mt-14 text-center font-mono2 text-[11px] tracking-[0.3em] text-mute">
-            ★ 43 MORE FILES IN THE VAULT — <a href="#signal" data-hover className="text-punch hover:text-volt transition-colors">REQUEST ACCESS</a> ★
+            ★ MORE BUILDS ON GITHUB —{" "}
+            <a href={GITHUB} data-hover target="_blank" rel="noreferrer" className="text-punch hover:text-volt transition-colors">
+              @DR-WRITES-ALOT
+            </a>{" "}
+            ★
           </p>
         </Reveal>
       </div>

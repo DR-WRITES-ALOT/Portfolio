@@ -3,10 +3,10 @@ import SectionHeading from "./SectionHeading";
 
 const PANELS = [
   {
-    caption: "CHAPTER 01 — 2016",
-    title: "THE SPARK",
-    text: "Age 14. View-source on a fan-comic site, and the brain gets rewired forever. First hand-coded page goes live. It has a marquee. No regrets.",
-    sfx: "BOOM!",
+    caption: "CHAPTER 01 — 2023",
+    title: "THE FIRST BYTE",
+    text: "First Python script, typed in school. It prints. It loops. It changes everything. Officially hooked on making computers do things.",
+    sfx: "HELLO WORLD!",
     bg: "bg-panel",
     titleColor: "text-volt",
     textColor: "text-mute",
@@ -14,10 +14,10 @@ const PANELS = [
     rot: -1,
   },
   {
-    caption: "CHAPTER 02 — 2019",
-    title: "TRAINING ARC",
-    text: "CS degree by day, freelance builds by night. 30+ sites shipped, sleep optional. Learns that 'it works on my machine' is not a release strategy.",
-    sfx: "GRIND!",
+    caption: "CHAPTER 02 — 2025",
+    title: "THE DEEP DIVE",
+    text: "Starts developing for real and joins GitHub as DR-WRITES-ALOT. First public repos go live — SnapHarbor and FLOW stop being ideas and start being code.",
+    sfx: "COMMIT!",
     bg: "bg-punch",
     titleColor: "text-paper",
     textColor: "text-paper/90",
@@ -25,9 +25,9 @@ const PANELS = [
     rot: 1,
   },
   {
-    caption: "CHAPTER 03 — 2022",
-    title: "POWER-UP",
-    text: "Senior creative dev at a neon-soaked studio. Award-winning campaign sites, WebGL boss fights, and a design system used by 40 devs.",
+    caption: "CHAPTER 03 — 2025",
+    title: "CAMPUS ARC",
+    text: "Clears school at RSK, Trichy and joins VIT Chennai for B.Tech CSE. Core CS in the classroom, side builds at midnight, and a desktop media vault slowly becoming a real release.",
     sfx: "LEVEL UP!",
     bg: "bg-volt",
     titleColor: "text-ink",
@@ -37,9 +37,9 @@ const PANELS = [
   },
   {
     caption: "CHAPTER 04 — 2026",
-    title: "SOLO RUN",
-    text: "Independent. Building loud interfaces for brands on three continents. Still drawing storyboards before writing a single line of code.",
-    sfx: "BOSS DOWN!",
+    title: "HACKATHON ERA",
+    text: "Hackathon season opens — a Gemma-powered drone disaster mapper goes into the arena. Now exploring Unity and C#, one orange man at a time.",
+    sfx: "GAME ON!",
     bg: "bg-panel",
     titleColor: "text-acid",
     textColor: "text-mute",
@@ -90,11 +90,12 @@ export default function About() {
         <Reveal delay={150}>
           <p className="mt-16 md:mt-20 font-display text-3xl md:text-5xl leading-tight max-w-4xl">
             <span className="text-paper stroke-ink-2">
-              “GOOD UI WHISPERS.{" "}
+              “BUILD.{" "}
             </span>
             <span className="bg-volt text-ink border-[3px] border-ink px-2 inline-block rotate-1 shadow-[5px_5px_0_#05030a]">
-              GREAT UI THROWS THE FIRST PUNCH.”
+              BREAK.
             </span>
+            <span className="text-acid stroke-ink-2"> REPEAT.”</span>
           </p>
         </Reveal>
       </div>
