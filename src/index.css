@@ -1,0 +1,481 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #05030a;
+  --color-void: #0b0710;
+  --color-panel: #171021;
+  --color-panel2: #1d1430;
+  --color-volt: #ffe600;
+  --color-ember: #ff7a18;
+  --color-punch: #ff2e7e;
+  --color-acid: #2be8ff;
+  --color-paper: #f4ecdd;
+  --color-mute: #a79bbf;
+  --color-live: #6eff8c;
+
+  --font-display: "Bangers", "Impact", cursive;
+  --font-body: "Space Grotesk", "Trebuchet MS", sans-serif;
+  --font-mono2: "JetBrains Mono", "Courier New", monospace;
+}
+
+/* ---------- base ---------- */
+
+html {
+  scrollbar-color: #ff2e7e #0b0710;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-volt);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0710;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff2e7e;
+  border: 3px solid #05030a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffe600;
+}
+
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+
+/* ---------- comic text helpers ---------- */
+
+.stroke-ink-2 { -webkit-text-stroke: 2px var(--color-ink); }
+.stroke-ink-3 { -webkit-text-stroke: 3px var(--color-ink); }
+.stroke-ink-4 { -webkit-text-stroke: 4px var(--color-ink); }
+.stroke-ink-6 { -webkit-text-stroke: 6px var(--color-ink); }
+
+.text-hollow {
+  color: transparent;
+  -webkit-text-stroke: 3px var(--color-volt);
+}
+
+.comic-title {
+  -webkit-text-stroke: 3px var(--color-ink);
+  text-shadow: 6px 6px 0 var(--ts, #ff2e7e);
+}
+
+.shadow-text-pink { text-shadow: 4px 4px 0 #ff2e7e; }
+.shadow-text-volt { text-shadow: 4px 4px 0 #ffe600; }
+
+/* ---------- textures ---------- */
+
+.halftone {
+  background-image: radial-gradient(rgba(244, 236, 221, 0.14) 1.5px, transparent 1.6px);
+  background-size: 13px 13px;
+}
+.halftone-ink {
+  background-image: radial-gradient(rgba(5, 3, 10, 0.26) 1.5px, transparent 1.6px);
+  background-size: 11px 11px;
+}
+.cyber-grid {
+  background-image: linear-gradient(rgba(255, 230, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 230, 0, 0.045) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+.scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(5, 3, 10, 0.22) 0px,
+    rgba(5, 3, 10, 0.22) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+.vignette {
+  background: radial-gradient(ellipse at center, transparent 52%, rgba(5, 3, 10, 0.6) 100%);
+}
+.stripes-anim {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(5, 3, 10, 0.28) 0 8px,
+    transparent 8px 16px
+  );
+  background-size: 23px 23px;
+  animation: kf-barber 0.9s linear infinite;
+}
+
+/* ---------- comic button ---------- */
+
+.btn-comic {
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: 3px solid var(--color-ink);
+  box-shadow: 6px 6px 0 var(--color-ink);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease,
+    color 0.16s ease;
+  user-select: none;
+}
+.btn-comic:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 9px 9px 0 var(--color-ink);
+}
+.btn-comic:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--color-ink);
+}
+
+.shadow-pink { box-shadow: 6px 6px 0 var(--color-punch); }
+.shadow-pink:hover { box-shadow: 9px 9px 0 var(--color-punch); }
+.shadow-pink:active { box-shadow: 1px 1px 0 var(--color-punch); }
+
+.shadow-volt { box-shadow: 6px 6px 0 var(--color-volt); }
+.shadow-volt:hover { box-shadow: 9px 9px 0 var(--color-volt); }
+.shadow-volt:active { box-shadow: 1px 1px 0 var(--color-volt); }
+
+/* ---------- keycaps ---------- */
+
+.keycap {
+  font-family: var(--font-mono2);
+  font-weight: 800;
+  display: inline-grid;
+  place-items: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.4rem;
+  background: var(--color-panel2);
+  border: 2px solid var(--color-ink);
+  box-shadow: 0 3px 0 var(--color-ink);
+  color: var(--color-volt);
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* ---------- reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) rotate(var(--rv-rot, 0deg)) scale(0.985);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--rv-rot, 0deg)) scale(1);
+}
+
+/* ---------- marquee ---------- */
+
+.marquee {
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: kf-marquee var(--speed, 26s) linear infinite;
+}
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ---------- glitch title ---------- */
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-text-stroke: 0;
+}
+.glitch::before {
+  color: var(--color-acid);
+  clip-path: inset(0 0 52% 0);
+  animation: kf-glitch-a 3.4s infinite steps(1, end);
+}
+.glitch::after {
+  color: var(--color-punch);
+  clip-path: inset(48% 0 0 0);
+  animation: kf-glitch-b 2.9s infinite steps(1, end);
+}
+
+/* ---------- misc live bits ---------- */
+
+.blink {
+  animation: kf-blink 1.1s steps(1, end) infinite;
+}
+.dot-live {
+  animation: kf-pulse 1.8s ease-out infinite;
+}
+.kenburns {
+  animation: kf-ken 16s ease-in-out infinite alternate;
+}
+.scan-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 24%;
+  background: linear-gradient(180deg, transparent, rgba(43, 232, 255, 0.2), transparent);
+  animation: kf-scan 3.4s linear infinite;
+  pointer-events: none;
+}
+.float-slow {
+  animation: kf-floaty 7s ease-in-out infinite;
+}
+.float-slower {
+  animation: kf-floaty 10s ease-in-out infinite;
+}
+.spin-slow {
+  animation: kf-spin 16s linear infinite;
+}
+.wobble {
+  animation: kf-wobble 3.6s ease-in-out infinite;
+}
+.neon-flicker {
+  animation: kf-flicker 4.5s linear infinite;
+}
+
+.group:hover .keycap {
+  animation: kf-shake 0.28s linear infinite;
+}
+
+/* ---------- cursor burst ---------- */
+
+.burst {
+  position: fixed;
+  z-index: 130;
+  pointer-events: none;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  color: var(--color-volt);
+  -webkit-text-stroke: 2px var(--color-ink);
+  text-shadow: 3px 3px 0 var(--color-punch);
+  animation: kf-burst 0.62s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---------- intro overlay ---------- */
+
+.intro-line {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: kf-rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.intro-load {
+  animation: kf-load 1.15s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+/* ---------- keyframes ---------- */
+
+@keyframes kf-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes kf-barber {
+  to {
+    background-position: 23px 0;
+  }
+}
+@keyframes kf-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes kf-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(110, 255, 140, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(110, 255, 140, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(110, 255, 140, 0);
+  }
+}
+@keyframes kf-ken {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: scale(1.13) translate(2%, -2%);
+  }
+}
+@keyframes kf-scan {
+  from {
+    top: -26%;
+  }
+  to {
+    top: 112%;
+  }
+}
+@keyframes kf-floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--fl-rot, 0deg));
+  }
+  50% {
+    transform: translateY(-16px) rotate(var(--fl-rot, 0deg));
+  }
+}
+@keyframes kf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes kf-wobble {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+@keyframes kf-flicker {
+  0%, 6%, 8%, 42%, 44%, 100% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0.55;
+  }
+  43% {
+    opacity: 0.7;
+  }
+  76% {
+    opacity: 0.92;
+  }
+}
+@keyframes kf-shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-1px, 1px);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -1px);
+  }
+}
+@keyframes kf-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0.25) rotate(-14deg);
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -70%) scale(1.3) rotate(9deg);
+    opacity: 0;
+  }
+}
+@keyframes kf-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes kf-load {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes kf-glitch-a {
+  0%, 88%, 100% {
+    opacity: 0;
+    transform: none;
+  }
+  89% {
+    opacity: 0.85;
+    transform: translate(-7px, 2px);
+  }
+  92% {
+    opacity: 0.85;
+    transform: translate(5px, -1px);
+  }
+  95% {
+    opacity: 0.85;
+    transform: translate(-3px, 1px);
+  }
+  97% {
+    opacity: 0;
+  }
+}
+@keyframes kf-glitch-b {
+  0%, 80%, 100% {
+    opacity: 0;
+    transform: none;
+  }
+  81% {
+    opacity: 0.85;
+    transform: translate(6px, -2px);
+  }
+  84% {
+    opacity: 0.85;
+    transform: translate(-5px, 2px);
+  }
+  88% {
+    opacity: 0.85;
+    transform: translate(3px, 0);
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
