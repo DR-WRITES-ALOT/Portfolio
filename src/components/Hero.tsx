@@ -222,7 +222,7 @@ export default function Hero() {
 
               <div className="relative halftone bg-panel2 border-b-[3px] border-ink overflow-hidden">
                 <img
-                  src="/images/avatar.png"
+                  src="images/avatar.png"
                   alt="Comic portrait of Kira Volt, cyberpunk UI developer with pink hair and yellow goggles"
                   className="w-full h-72 md:h-80 object-cover object-top"
                 />
