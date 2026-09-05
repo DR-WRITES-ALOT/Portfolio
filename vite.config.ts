@@ -14,6 +14,14 @@ export default defineConfig({
   // (e.g. https://<user>.github.io/<repo>/) and not just the domain root.
   base: "./",
   plugins: [react(), tailwindcss(), viteSingleFile()],
+  server: {
+    // Allow access via sandbox/ preview hostnames during development.
+    allowedHosts: true,
+  },
+  preview: {
+    // Allow access via sandbox/ preview hostnames for the built site.
+    allowedHosts: true,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
